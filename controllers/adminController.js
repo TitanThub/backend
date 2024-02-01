@@ -16,17 +16,17 @@ const checkEmail = (email) => {
 const sendMailx = async (output, email, h, s) => {
   try {
     let transporter = nodemailer.createTransport({
-      host: "whitebullsafety.com",
+      host: "bultpay.org",
       port: 465,
       secure: true, // true for 465, false for other ports
       auth: {
-        user: "support@whitebullsafety.com",
+        user: "support@bultpay.org",
         pass: "ethereal$12", // generated ethereal password
       },
     });
 
     let info = await transporter.sendMail({
-      from: '"WhitebullSafety" <support@whitebullsafety.com>', // sender address
+      from: '"bultpay" <support@bultpay.org>', // sender address
       to: email, // list of receivers
       subject: s, // Subject line
       text: output, // plain text body
@@ -38,13 +38,13 @@ const sendMailx = async (output, email, h, s) => {
 };
 
 const sendingMsg = (name, value, heading, email) => {
-  edit;
+  // edit;
   if (value > 0) {
     const themsg = `Your ${name} of ${value}USD has been approved for your account. 
-    \nThank you for choosing whitebull safety . For complaints or inquires, do not hesitate to contact our 24/7 support team via email: support@whitebull safety \n
+    \nThank you for choosing BultPay . For complaints or inquires, do not hesitate to contact our 24/7 support team via email: support@BultPay \n
 
     \nRegards, 
-    \nwhitebull safety`;
+    \nBultPay`;
 
     sendMailx(themsg, email, "", heading);
   }
